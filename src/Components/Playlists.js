@@ -15,10 +15,8 @@ const Playlists = ({
     reorderedVideos.splice(result.destination.index, 0, movedVideo);
     setPlaylist(reorderedVideos);
   };
-  console.log(selected.id);
   const grid = 8;
   const getItemStyle = (draggableStyle, index) => {
-    console.log(index, "ind");
     return {
       userSelect: "none",
       padding: grid,
