@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+::-webkit-scrollbar {
+  display: none;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.playlist-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.videoIcon {
+  opacity: 1;
+  animation: fadeInAnimation forwards 3s;
 }
-
-.App-header {
-  background-color: #282c34;
+.container {
+  width: 100vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.video-container {
+  width: 60%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.playlists-container {
+  width: 35%;
+}
+.app-layout {
+  height: 80vh;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+  }
+}
+.search-input:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .app-layout {
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+  }
+  .video-container {
+    width: 100%;
+  }
+  .container {
+    width: 100vw;
+    height: 100%;
+  }
+  .playlists-container {
+    width: 100%;
   }
 }
