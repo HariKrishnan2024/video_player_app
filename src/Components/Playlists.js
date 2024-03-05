@@ -15,14 +15,17 @@ const Playlists = ({
     reorderedVideos.splice(result.destination.index, 0, movedVideo);
     setPlaylist(reorderedVideos);
   };
-
+  console.log(selected.id);
   const grid = 8;
-  const getItemStyle = (draggableStyle, index) => ({
-    userSelect: "none",
-    padding: grid,
-    background: selected.id === index ? "#313131" : "#000",
-    ...draggableStyle,
-  });
+  const getItemStyle = (draggableStyle, index) => {
+    console.log(index, "ind");
+    return {
+      userSelect: "none",
+      padding: grid,
+      backgroundColor: selected.id === index ? "#313131" : "#000",
+      ...draggableStyle,
+    };
+  };
 
   const getListStyle = () => ({
     height: "100%",
@@ -66,7 +69,6 @@ const Playlists = ({
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                     style={getItemStyle(
-                      snapshot.isDragging,
                       provided.draggableProps.style,
                       video.id
                     )}

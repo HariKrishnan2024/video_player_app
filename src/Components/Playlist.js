@@ -14,6 +14,7 @@ const Playlist = ({ data = {} }) => {
         <img
           src={data.thumbnail}
           width={"100%"}
+          alt={data.title}
           height={70}
           style={{
             objectFit: "cover",
@@ -48,7 +49,6 @@ const Playlist = ({ data = {} }) => {
             fontSize: 14,
             fontWeight: "bold",
             lineHeight: "1.5em",
-            // height: "3em",
             overflow: "hidden",
           }}
           className="playlist-title"
